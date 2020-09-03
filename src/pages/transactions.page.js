@@ -41,7 +41,9 @@ module.exports = {
     filterFileName: `div[id='filterMenuPopup'] > ul > li:nth-of-type(6) > button`,
     filterMenu: `div[id='filterMenuPopup']`
   },
-
+    result :{
+      showing : `div[class*='dataTables_info']`
+    },
 
   //Methods
 
@@ -194,6 +196,7 @@ module.exports = {
   setFileName(value) {
     const element = this.fields.inputFilterFilename;
     I.fillField(element, value);
+
   },
 
   clickAddFilename() {
@@ -235,4 +238,13 @@ module.exports = {
     I.click(element);
   },
 
+    /*
+   * Result
+   * ***************************************************************
+   */
+    totalNumberOfItem(){
+        const element = this.result.showing;
+        let result = I.grabTextFrom(element);
+        return result.substring(18);
+    },
 }

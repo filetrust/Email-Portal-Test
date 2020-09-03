@@ -6,7 +6,7 @@ const faker = require('faker');
 const {
     I,
     usersPage,
-    env,data
+    env
 } = inject();
 
 const uuid = faker.random.uuid();
@@ -25,12 +25,12 @@ Given('I am on the users screen', () => {
 
 When('I add a new user with a valid email address', () => {
     const userGroup = "view config";
-    usersPage.addUser(userName, data.qa.userEmail, userGroup);
+    usersPage.addUser(userName, env.qa.userEmail, userGroup);
 });
 
 When('I update a user record with a new group', () => {
     const userGroup = "Administration Group";
-    usersPage.addUser(userName, data.qa.userEmail, userGroup);
+    usersPage.addUser(userName, env.qa.userEmail, userGroup);
 });
 
 Then('The new user record is saved with a tick icon', () => {
@@ -40,7 +40,7 @@ Then('The new user record is saved with a tick icon', () => {
 
 When('I add a new user with a duplicate email address', () => {
     const userGroup = "view config";
-    usersPage.addUser(userName, data.qa.userEmail, userGroup);
+    usersPage.addUser(userName, env.qa.userEmail, userGroup);
 });
 
 Then('the validation error is displayed', () => {

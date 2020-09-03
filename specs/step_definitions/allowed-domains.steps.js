@@ -2,7 +2,7 @@
 var assert = require('assert')
 const faker = require('faker');
 
-const {I, allowedDomainsPage, homePage, env, data} = inject();
+const {I, allowedDomainsPage, homePage, env} = inject();
 const file = './src/data/domain_1.csv'
 
 Given('I am logged in as required tenant', () => {
@@ -13,7 +13,7 @@ Given('I am logged in as required tenant', () => {
 
 When('I add a valid Domain and save', () => {
   allowedDomainsPage.clickAddAllowedDomain();
-  allowedDomainsPage.setDomain(data.qa.domain);
+  allowedDomainsPage.setDomain(env.qa.domain);
   allowedDomainsPage.clickSaveAllowedDomainsButton();
 });
 
