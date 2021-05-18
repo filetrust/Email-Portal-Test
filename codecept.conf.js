@@ -15,7 +15,10 @@ exports.config = {
       waitForTimeout: 60000
     },
     Mochawesome: {
-      uniqueScreenshotNames: "true" 
+      uniqueScreenshotNames: "true"
+    },
+    "AssertWrapper" : {
+      "require": "codeceptjs-assert"
     }
   },
   include: {
@@ -55,8 +58,8 @@ exports.config = {
   bootstrap: null,
   teardown: null,
   hooks: [
-    
-   ], 
+
+   ],
   gherkin: {
     features: './specs/features/*.feature',
     steps: './specs/step_definitions/*.steps.js'
@@ -80,7 +83,7 @@ exports.config = {
       deleteSuccessful: false,
       screenshotsForAllureReport: false
     },
-    
+
     // reportportal: {
     //   enabled: true,
     //   require: '@reportportal/agent-js-codecept',
@@ -90,6 +93,6 @@ exports.config = {
     //   projectName: 'nadhodegw_personal'
     // }
   },
-  tests: './*.steps.js',
+  tests: './specs/tests/*_test.js',
   name: 'email-portal-test'
 }

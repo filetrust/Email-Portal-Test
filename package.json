@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "codeceptjs": "^3.0.0-beta.4",
+    "codeceptjs": "^3.0.0",
     "puppeteer": "^4.0.0"
   },
   "dependencies": {
@@ -20,6 +20,8 @@
     "@reportportal/agent-js-codecept": "^0.2.2",
     "allure-commandline": "^2.13.0",
     "chai": "^4.2.0",
+    "codeceptjs-assert": "0.0.4",
+    "dateformat": "3.0.3",
     "dotenv": "^8.2.0",
     "env-cmd": "^10.1.0",
     "faker": "^4.1.0",
